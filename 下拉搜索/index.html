@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script language="JavaScript" src="jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="jquery.searchableSelect.css"/>
+</head>
+<body>
+<div class="box"><span >前端：</span>
+    <div tabindex="4" class="searchable-select" id="car1">
+        <span class="searchable-select-caret"></span>
+        <div class="searchable-select-holder"></div>
+        <div class="searchable-select-dropdown searchable-select-hide">
+            <input type="text" class="searchable-select-input">
+            <div class="searchable-scroll">
+                <div class="searchable-has-privious searchable-select-hide">...</div>
+                <div class="searchable-select-items" id="carid">
+                    <div class="searchable-select-item " data-value=""></div>
+                    <div class="searchable-select-item " data-value="HTML5">HTML5</div>
+                    <div class="searchable-select-item " data-value="CSS3">CSS3</div>
+                    <div class="searchable-select-item " data-value="jquery">jquery</div>
+                    <div class="searchable-select-item " data-value="angular框架">angular框架</div>
+                    <div class="searchable-select-item " data-value="其他框架">其他框架</div>
+                </div>
+                <div class="searchable-has-next searchable-select-hide">...</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script language="JavaScript">
+    $("#car1").click(function(){
+        $(this).children().removeClass("searchable-select-hide");
+        $(this).children().show();
+        $("#car1").searchData();
+    });
+    $("#carid .searchable-select-item").click(function(){
+        $(this).addClass("selected").siblings().removeClass("selected");
+        var val=$("#carid  div.selected").text();
+        $("#car1 .searchable-select-holder").text(val);
+        $("#car1 .searchable-select-dropdown").addClass("searchable-select-hide");
+    });
+    $(".searchable-select,.searchable-select-dropdown").mouseleave(function(){
+        $(".searchable-select-dropdown").addClass("searchable-select-hide");
+    });
+</script>
+<script language="JavaScript" src="searchsuosou.js" ></script>
+</body>
+</html>
