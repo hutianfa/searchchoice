@@ -1,13 +1,16 @@
 /*
-Author: David Qin
-E-mail: david@hereapp.cn
-Date: 2014-11-05
+Author: hutianfa
+E-mail: 542205179@qq.com
+Date: 2016-05-05
 */
-
+@charset "utf-8";
+/* CSS Document */
+body,div,input,span {
+  margin:0 auto; padding:0px;
+}
 .searchable-select-hide {
   display: none;
 }
-
 .searchable-select {
   display: inline-block;
   min-width: 120px;
@@ -18,7 +21,6 @@ Date: 2014-11-05
   position: relative;
   outline: none;
 }
-
 .searchable-select-holder{
   padding: 5px;
   background-color: #fff;
@@ -120,7 +122,7 @@ Date: 2014-11-05
   display: none;
 }
 
-.searchable-select-item {
+div.searchable-select-item {
   padding: 5px 5px;
   cursor: pointer;
   min-height: 28px;
